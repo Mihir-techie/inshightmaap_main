@@ -1,10 +1,10 @@
-# Insight Main - AI-Powered Learning Map Generator
+# inshightmaap_main - AI-Powered Learning Map Generator
 
 ## Project Overview
 
 Insight Main is an AI-powered application that analyzes text content and generates structured learning maps with hierarchical topic trees, summaries, and key topics. It features a Flask backend with Ollama LLM integration for text summarization and PDF generation capabilities.
 
-**Repository**: https://github.com/Mihir-techie/insightmain-.git
+**Repository**: https://github.com/Mihir-techie/inshightmaap_main.git
 
 ## How can I edit this code?
 
