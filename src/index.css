@@ -1,0 +1,254 @@
+@import '@fontsource/space-grotesk/400.css';
+@import '@fontsource/space-grotesk/500.css';
+@import '@fontsource/space-grotesk/600.css';
+@import '@fontsource/space-grotesk/700.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core palette - Warm cream & deep indigo */
+    --background: 45 30% 97%;
+    --foreground: 230 25% 15%;
+
+    --card: 45 25% 99%;
+    --card-foreground: 230 25% 15%;
+
+    --popover: 45 25% 99%;
+    --popover-foreground: 230 25% 15%;
+
+    /* Deep indigo primary */
+    --primary: 235 45% 25%;
+    --primary-foreground: 45 30% 97%;
+
+    /* Soft sage secondary */
+    --secondary: 150 20% 92%;
+    --secondary-foreground: 230 25% 20%;
+
+    /* Warm amber accent */
+    --accent: 38 95% 55%;
+    --accent-foreground: 230 25% 12%;
+
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 10% 45%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 235 45% 35%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(235 45% 25%) 0%, hsl(260 40% 35%) 50%, hsl(280 35% 45%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(38 95% 55%) 0%, hsl(28 90% 55%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsla(0 0% 100% / 0.1) 0%, hsla(0 0% 100% / 0.05) 100%);
+    --gradient-mesh: radial-gradient(at 40% 20%, hsl(235 45% 25% / 0.08) 0px, transparent 50%),
+                     radial-gradient(at 80% 0%, hsl(280 35% 45% / 0.06) 0px, transparent 50%),
+                     radial-gradient(at 0% 50%, hsl(38 95% 55% / 0.04) 0px, transparent 50%),
+                     radial-gradient(at 80% 50%, hsl(150 20% 50% / 0.04) 0px, transparent 50%),
+                     radial-gradient(at 0% 100%, hsl(235 45% 35% / 0.05) 0px, transparent 50%);
+    
+    --shadow-soft: 0 2px 8px -2px hsl(230 25% 15% / 0.08), 0 4px 16px -4px hsl(230 25% 15% / 0.12);
+    --shadow-glow: 0 0 40px -10px hsl(38 95% 55% / 0.3);
+    --shadow-card: 0 4px 24px -8px hsl(230 25% 15% / 0.1), 0 8px 48px -16px hsl(230 25% 15% / 0.08);
+    --shadow-elevated: 0 12px 48px -12px hsl(230 25% 15% / 0.15), 0 24px 80px -24px hsl(230 25% 15% / 0.1);
+
+    /* Sidebar tokens */
+    --sidebar-background: 45 25% 98%;
+    --sidebar-foreground: 230 25% 25%;
+    --sidebar-primary: 235 45% 25%;
+    --sidebar-primary-foreground: 45 30% 97%;
+    --sidebar-accent: 150 20% 92%;
+    --sidebar-accent-foreground: 230 25% 20%;
+    --sidebar-border: 220 15% 90%;
+    --sidebar-ring: 235 45% 35%;
+  }
+
+  .dark {
+    --background: 230 25% 8%;
+    --foreground: 45 20% 95%;
+
+    --card: 230 25% 10%;
+    --card-foreground: 45 20% 95%;
+
+    --popover: 230 25% 10%;
+    --popover-foreground: 45 20% 95%;
+
+    --primary: 38 95% 55%;
+    --primary-foreground: 230 25% 10%;
+
+    --secondary: 230 20% 18%;
+    --secondary-foreground: 45 20% 90%;
+
+    --accent: 38 95% 55%;
+    --accent-foreground: 230 25% 10%;
+
+    --muted: 230 20% 15%;
+    --muted-foreground: 220 10% 55%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 230 20% 18%;
+    --input: 230 20% 18%;
+    --ring: 38 95% 55%;
+
+    --sidebar-background: 230 25% 10%;
+    --sidebar-foreground: 45 20% 90%;
+    --sidebar-primary: 38 95% 55%;
+    --sidebar-primary-foreground: 230 25% 10%;
+    --sidebar-accent: 230 20% 18%;
+    --sidebar-accent-foreground: 45 20% 90%;
+    --sidebar-border: 230 20% 18%;
+    --sidebar-ring: 38 95% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    @apply tracking-tight;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .gradient-mesh {
+    background: var(--gradient-mesh);
+  }
+
+  .gradient-glass {
+    background: var(--gradient-glass);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(235 45% 25%) 0%, hsl(260 40% 35%) 50%, hsl(280 35% 45%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-accent {
+    background: linear-gradient(135deg, hsl(38 95% 55%) 0%, hsl(28 90% 55%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glass morphism */
+  .glass {
+    @apply backdrop-blur-xl border border-white/20;
+    background: hsla(0 0% 100% / 0.7);
+  }
+
+  .glass-dark {
+    @apply backdrop-blur-xl border border-white/10;
+    background: hsla(230 25% 15% / 0.6);
+  }
+
+  /* Animated gradient border */
+  .border-gradient {
+    position: relative;
+    background: hsl(var(--card));
+    border-radius: var(--radius);
+  }
+
+  .border-gradient::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: calc(var(--radius) + 1px);
+    background: var(--gradient-hero);
+    z-index: -1;
+  }
+
+  /* Node connection lines */
+  .node-line {
+    stroke: hsl(var(--primary) / 0.3);
+    stroke-width: 2;
+    fill: none;
+  }
+
+  .node-line-active {
+    stroke: hsl(var(--accent));
+    stroke-width: 2.5;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Selection */
+::selection {
+  background: hsl(var(--accent) / 0.3);
+  color: hsl(var(--foreground));
+}
